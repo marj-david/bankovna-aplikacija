@@ -10,6 +10,10 @@ int main() {
     int loginChoice;
     FILE* fp;
     fp = fopen("korisnici.txt", "r");
+	if (fp == NULL) {
+		perror("Datoteka:");
+		return 1;
+	}
 
     int numOfUsers = 0;    
     USER users[100];
